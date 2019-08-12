@@ -1,0 +1,23 @@
+{
+  "name": "qr-check-info",
+  "version": "1.0.0",
+  "description": "Get Russian check info using string from qr code",
+  "main": "dist/index.js",
+  "repository": "https://github.com/SetSplin/qr-check-info",
+  "author": "Igor Tarakanov",
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env babel src -d dist"
+  },
+  "dependencies": {
+    "js-base64": "^2.5.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}
