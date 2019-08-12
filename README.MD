@@ -29,7 +29,8 @@ const qr_string =
 const checkInfo = new CheckInfoGetter({
   username: '+79999999999', // phone that you used to register
   password: '000000', // password that you received in sms
-  delay: 500, // delay between queries (to get info getter makes two queries) is necessary so as not to get an error from the server
+  delay: 500, // delay between queries (to get info getter makes two queries)
+  // is necessary so as not to get an error from the server
 })
 
 checkInfo.get(qr_string).then(
