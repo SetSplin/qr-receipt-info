@@ -1,8 +1,9 @@
 {
   "name": "qr-check-info",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Get Russian check info using string from qr code",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "repository": "https://github.com/SetSplin/qr-check-info",
   "author": "Igor Tarakanov",
   "license": "MIT",
