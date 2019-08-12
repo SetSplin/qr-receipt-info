@@ -13,7 +13,7 @@ npm i -S qr-check-info
 
 Via `yarn`
 ```bash
-npm i -S qr-check-info
+yarn add qr-check-info
 ```
 
 ## Usage
