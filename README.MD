@@ -44,5 +44,5 @@ checkInfo.get(qr_string).then(
 
 [MIT](http://vjpr.mit-license.org)
 
-[npm-image]: https://img.shields.io/npm/v/live-xxx.svg
+[npm-image]: https://img.shields.io/npm/v/qr-check-info.svg
 [npm-url]: https://npmjs.org/package/qr-check-info
