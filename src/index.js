@@ -1,5 +1,4 @@
 import parseReceiptString from './parseReceiptString';
-import nodeFetch from 'node-fetch';
 import { Base64 } from 'js-base64'
 
 
@@ -32,7 +31,10 @@ export default class ReceiptInfoGetter {
   }
 
   async request(url) {
-    return (fetch || nodeFetch)(
+    const fetcher = (typeof fetch !== 'undefined')
+      ? fetch
+      : import('node-fetch');
+    return fetcher(
       url,
       {
         method: 'GET',
