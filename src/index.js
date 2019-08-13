@@ -33,7 +33,7 @@ export default class ReceiptInfoGetter {
   async request(url) {
     const fetcher = (typeof fetch !== 'undefined')
       ? fetch
-      : import('node-fetch');
+      : () => import('node-fetch');
     return fetcher(
       url,
       {
