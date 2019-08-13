@@ -63,14 +63,14 @@ class ReceiptInfoGetter {
         return null;
       }
 
-      const check_status = (await this.request(CheckInfoGetter.makeUrl(URL_CHECK, params))).status;
+      const check_status = (await this.request(ReceiptInfoGetter.makeUrl(URL_CHECK, params))).status;
 
       if (check_status === 204) {
         // delay required between check and get
         return new Promise(resolve => {
           setTimeout(async () => {
             try {
-              const result = await this.request(CheckInfoGetter.makeUrl(URL_GET, params));
+              const result = await this.request(ReceiptInfoGetter.makeUrl(URL_GET, params));
               resolve((await result.json()).document.receipt);
             } catch {
               resolve(null);

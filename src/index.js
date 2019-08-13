@@ -54,7 +54,7 @@ export default class ReceiptInfoGetter {
       }
 
       const check_status = (await this.request(
-        CheckInfoGetter.makeUrl(URL_CHECK, params)
+        ReceiptInfoGetter.makeUrl(URL_CHECK, params)
       )).status;
 
       if (check_status === 204) {
@@ -63,7 +63,7 @@ export default class ReceiptInfoGetter {
           setTimeout(async () => {
             try {
               const result = (await this.request(
-                CheckInfoGetter.makeUrl(URL_GET, params)
+                ReceiptInfoGetter.makeUrl(URL_GET, params)
               ));
               resolve((await result.json()).document.receipt);
             } catch {

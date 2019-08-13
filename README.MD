@@ -1,6 +1,6 @@
 # qr-receipt-info
 
-> Get Russian check info using string from qr code
+> Get Russian receipt info using string from qr code
 
 [![NPM Version][npm-image]][npm-url]
 
