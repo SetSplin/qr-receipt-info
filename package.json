@@ -1,6 +1,6 @@
 {
   "name": "qr-receipt-info",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Get Russian receipt info using string from qr code",
   "main": "dist/index.js",
   "module": "src/index.js",

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _parseCheckString = _interopRequireDefault(require("./parseCheckString"));
+var _parseReceiptString = _interopRequireDefault(require("./parseReceiptString"));
 
 var _nodeFetch = _interopRequireDefault(require("node-fetch"));
 
@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const URL_CHECK = "https://proverkacheka.nalog.ru:9999/v1/ofds/*/inns/*/fss/<fiscalNumber>/operations/<checkType>/tickets/<fiscalDocument>?fiscalSign=<fiscalSign>&date=<time>&sum=<price>";
 const URL_GET = "https://proverkacheka.nalog.ru:9999/v1/inns/*/kkts/*/fss/<fiscalNumber>/tickets/<fiscalDocument>?fiscalSign=<fiscalSign>&sendToEmail=no";
 
-class CheckInfoGetter {
+class ReceiptInfoGetter {
   constructor({
     username,
     password,
@@ -44,7 +44,7 @@ class CheckInfoGetter {
   }
 
   async request(url) {
-    return (0, _nodeFetch.default)(url, {
+    return (fetch || _nodeFetch.default)(url, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',
@@ -57,7 +57,7 @@ class CheckInfoGetter {
 
   async get(qr_string) {
     try {
-      const params = (0, _parseCheckString.default)(qr_string);
+      const params = (0, _parseReceiptString.default)(qr_string);
 
       if (params === null) {
         return null;
@@ -85,4 +85,4 @@ class CheckInfoGetter {
 
 }
 
-exports.default = CheckInfoGetter;
+exports.default = ReceiptInfoGetter;
