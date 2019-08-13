@@ -1,10 +1,10 @@
 {
-  "name": "qr-check-info",
+  "name": "qr-receipt-info",
   "version": "1.2.0",
-  "description": "Get Russian check info using string from qr code",
+  "description": "Get Russian receipt info using string from qr code",
   "main": "dist/index.js",
   "module": "src/index.js",
-  "repository": "https://github.com/SetSplin/qr-check-info",
+  "repository": "https://github.com/SetSplin/qr-receipt-info",
   "author": "Igor Tarakanov",
   "license": "MIT",
   "scripts": {

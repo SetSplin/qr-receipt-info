@@ -1,5 +1,5 @@
-import parseCheckString from './parseCheckString';
-import fetch from 'node-fetch';
+import parseReceiptString from './parseReceiptString';
+import nodeFetch from 'node-fetch';
 import { Base64 } from 'js-base64'
 
 
@@ -7,7 +7,7 @@ const URL_CHECK = "https://proverkacheka.nalog.ru:9999/v1/ofds/*/inns/*/fss/<fis
 const URL_GET = "https://proverkacheka.nalog.ru:9999/v1/inns/*/kkts/*/fss/<fiscalNumber>/tickets/<fiscalDocument>?fiscalSign=<fiscalSign>&sendToEmail=no";
 
 
-export default class CheckInfoGetter {
+export default class ReceiptInfoGetter {
   constructor({ username, password, delay }) {
     this.username = username;
     this.password = password;
@@ -32,7 +32,7 @@ export default class CheckInfoGetter {
   }
 
   async request(url) {
-    return fetch(
+    return (fetch || nodeFetch)(
       url,
       {
         method: 'GET',
@@ -48,7 +48,7 @@ export default class CheckInfoGetter {
 
   async get(qr_string) {
     try {
-      const params = parseCheckString(qr_string);
+      const params = parseReceiptString(qr_string);
       if (params === null) {
         return null;
       }
